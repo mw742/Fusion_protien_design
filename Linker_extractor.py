@@ -193,16 +193,16 @@ with open("Linkers_fasta.txt", "r") as f:
             bs=BeautifulSoup(res_text,'lxml')
             secondary_info=bs.select("code")[0].text.split("\n")[4]
             print("secondary_info:", secondary_info)
-            sheet.write(n,4,secondary_info)
+            sheet.write(n,5,secondary_info)
             c_count=secondary_info.count("c")
             seq_length=len(secondary_info)
             c_rate=float(c_count/seq_length)
-            sheet.write(n,5,secondary_info)
-            sheet.write(n,6,c_rate)
+            sheet.write(n,6,secondary_info)
+            sheet.write(n,7,c_rate)
             if c_rate <= 0.3:
-                sheet.write(n,7,"True")
+                sheet.write(n,8,"True")
             else:
-                sheet.write(n,7,"False")
+                sheet.write(n,8,"False")
             n+=1
 f.close()
 work_book.save('Linkers_from_secreted.xls')
