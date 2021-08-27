@@ -1,4 +1,4 @@
-# Linker_extractor
+# Loop_extractor
 
 It is a small tool to extract loops area between domains of various protein as linkers for fusion protein design etc. (Python 3.7)
 
